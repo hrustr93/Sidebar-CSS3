@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="css/sidebar.css" rel="stylesheet">
+	<script src="js/toggle.js"></script>
+<style>
+	  /*layoyt style*/
+	  body{
+	  text-align:center;
+	  font-size: 15px;
+	  color: #777;
+	  }
+	  ul{
+	  text-align:left;
+	  color: #555;
+	  }
+</style>
+<style>
+	/*Customise sidebar*/
+	  sidebar{
+	    width: 80%;/*Drawer width(if > or < 80% - ONLY SLIDE ANIMATION)*/
+	  }
+	  .sidebar_header{
+	    background-image: url('img/drawer.png');/*path to header image(relative or absolute)*/
+	  }
+</style>
+  </head>
+  <body>
+	<div class="actionbar">
+	  <input type="checkbox" class="sidebar__trigger" id="trigger" onclick="toggleSidebar();">
+	  <label for="trigger" class="itembar icon"></label>
+	  <span class="hamburger-icon"></span>
+	  <span class="itembar title">Sidebar CSS3</span>
+	</div>
+	<sidebar enabled="false" animation="awesome">
+	  <div id="header" class="sidebar_header mini">
+		<img class="header_icon" src="img/drawer_icon.png">
+		<span class="header_title">Sidebar CSS</span>
+		<span class="header_subtitle">by Hrust_r</span>
+	  </div>
+	  <span class="stackheader">Заголовок блока 1:</span>
+	  <ul>
+		<li static><span class="glyphicon glyphicon-compressed"></span> Статичный элемент</li>
+		<li static><span class="glyphicon glyphicon-lock"></span> Статичный элемент</li>
+		<li><span class="glyphicon glyphicon-tree-conifer"></span> Анимированый элемент</li>
+	  </ul>
+	  <span class="stackheader">Заголовок блока 2:</span>
+	  <ul>
+		<li static><span class="glyphicon glyphicon-barcode"></span> Статичный элемент</li>
+		<li static><span class="glyphicon glyphicon-ok"></span> Статичный элемент</li>
+		<li ><span class="glyphicon glyphicon-user"></span> Анимированый элемент</li>
+	  </ul>
+	  <span class="stackheader">Заголовок блока 3:</span>
+	  <ul>
+		<li static><span class="glyphicon glyphicon-zoom-in"></span> Статичный элемент</li>
+		<li static><span class="glyphicon glyphicon-pencil"></span> Статичный элемент</li>
+		<li><span class="glyphicon glyphicon-tower"></span> Анимированый элемент</li>
+	  </ul>
+	  <span class="stackheader">Заголовок блока 4:</span>
+	  <ul>
+		<li static><span class="glyphicon glyphicon-asterisk"></span> Статичный элемент</li>
+		<li static><span class="glyphicon glyphicon-camera"></span> Статичный элемент</li>
+		<li><span class="glyphicon glyphicon-book"></span> Анимированый элемент</li>
+	  </ul>
+	</sidebar>
+	<h3>Тест анимации</h3>
+	Введите имя анимации:<br>
+	<input id="anim" class="mini title" type="text"><br>
+	<span id="current"></span><br>
+	  <input type="button" value="Применить" onclick="switc()">
+		<br>
+	<h3>Имена анимаций:</h3>
+	<ul>
+	  <li>collapse</li>
+      <li>fade</li>
+	  <li>fall</li>
+	  <li>slide</li>
+	  <li>compress</li>
+	  <li>awesome</li>
+	</ul>
+	  <script>
+		var anim = document.getElementById("anim");
+		var target = document.getElementsByTagName("sidebar")[0];
+		var current = document.getElementById("current");
+		current.innerHTML= "Текущая анимация: "+target.getAttribute("animation");
+		function switc(){
+		if(anim.value!="")target.setAttribute("animation",anim.value);
+		current.innerHTML="Текущая анимация: "+target.getAttribute("animation");
+		}
+	  </script>
+	
+  </body>
+</html>		

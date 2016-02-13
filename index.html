@@ -1,13 +1,120 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/styles.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="css/sidebar.css" rel="stylesheet">
+	<script src="js/toggle.js"></script>
+    <style>
+	  /*layoyt style*/
+	  body{
+	  text-align:center;
+	  font-size: 15px;
+	  color: #777;
+	  }
+	  ol,ul{
+	  text-align:left;
+	  color: #555;
+	  }
+	  code{
+	  text-size: 20px;
+	  color: green;
+	  letter-spacing: 1px;
+	  background-color:#fff;
+	  display:block;
+	  width:70%;
+	  border: 2px solid black;
+	  border-radius: 1px;
+	  margin:3px;
+	  padding: 5px;
+	  overflow-x: auto;
+	  }
+	</style>
+    <style>
+	/*Customise sidebar*/
+	  sidebar{
+	    width: 80%;/*Drawer width(if > or < 80% - ONLY SLIDE ANIMATION)*/
+	  }
+	  .sidebar_header{
+	    background-image: url('img/drawer.png');/*path to header image(relative or absolute)*/
+	  }
+	</style>
   </head>
   <body>
-
-    <h1>My Website</h1>
-
-    <p>This is my first website</p>
-
+	<div class="actionbar">
+	  <input type="checkbox" class="sidebar__trigger" id="trigger" onclick="toggleSidebar();">
+	  <label for="trigger" class="itembar icon"></label>
+	  <span class="hamburger-icon"></span>
+	  <span class="itembar title">Sidebar CSS3</span>
+	</div>
+	<sidebar enabled="false" animation="awesome">
+	  <div id="header" class="sidebar_header">
+		<img class="header_icon" src="img/drawer_icon.png">
+		<span class="header_title">Sidebar CSS</span>
+		<span class="header_subtitle">by Hrust_r</span>
+	  </div>
+	  <span class="stackheader">Заголовок блока 1:</span>
+	   <ul>
+		 <li static><span class="glyphicon glyphicon-search"></span> <a href="play.html">Просмотр анимаций</a></li>
+		 <li static><span class="glyphicon glyphicon-lock"></span> Статичный элемент</li>
+		 <li><span class="glyphicon glyphicon-tree-conifer"></span> Анимированый элемент</li>
+	   </ul>
+	</sidebar>
+	<h1>Sidebar CSS3</h1>
+	<h3>Описание</h3>
+	<p>Sidebar CSS3 - это плагин для вашего сайта с минимальным вмешательством JS.
+	  В этом плагине основную роль играет CSS3 с анимацией. JS используется только для 
+	  динамической смены состояния панелии : открыта/закрыта. панель выполнена в Material design.</p>
+	<h3>Состав</h3>
+	<p>В плагин включены:</p>
+	<ul>
+	  <li>Выдвижная панель с двумя видами header-блоков (стандартный и mini)</li>
+	  <li>Заголовок высотой 50px с анимированой иконкой меню(hamburger-icon) и заголовком(fadetitle)</li>
+	  <li>Коллекция из 200 иконок собранная в иконочном шрифте glyphicon из bootstrap</li>
+	  <li>Несколько видов анимации открытия</li>
+	</ul>
+	<h3>Плюсы</h3>
+	<ul>
+	  <li>Простота установки: достаточно лишь добавить тег &lt;sidebar&gt;</li>
+	  <li><s>Jquery</s> - полное отсутствие js фреймворков. + Скорость. - Вес</li>
+	  <li>Богатство анимации</li>
+	</ul>
+	<h3>Минусы</h3>
+	<ul>
+	  <li>Нет полной независимости от JavaScript</li>
+	  <li>Отсутствие поддержки старыми браузерами типа IE ранних версий</li>
+	</ul>
+	<h3>Как пользоваться?</h3>
+	<ol type="1">
+	  <li>Подключить файы sidebar.css и toggle.js к проекту:</li>
+	  <code>&lt;link href="css/sidebar.css" rel="stylesheet"&gt;</code>
+	  <code>&lt;script src="js/toggle.js"&gt;&lt;/script&gt;</code>
+	  <li><span class="glyphicon glyphicon-asterisk"></span>Добавить на страницу actionbar:</li>
+	  <code>
+		&lt;div class="actionbar"&gt;<br>
+		  &lt;input type="checkbox" class="sidebar__trigger" id="trigger" onclick="toggleSidebar();"&gt;<br>
+		  &lt;label for="trigger" class="itembar icon"&gt;&lt;/label&gt;<br>
+		  &lt;span class="hamburger-icon"&gt;&lt;/span&gt;<br>
+		  &lt;span class="itembar title"&gt;Sidebar CSS3&lt;/span&gt;<br>
+	  &lt;/div&gt;
+	  </code>
+	  <li>Добавить sidebar:</li>
+	  <code>&lt;sidebar enabled="false" animation="slide"&gt;<br>
+		&lt;/sidebar&gt;</code>
+	  <span>enabled="true/false" - открыт/закрыт</span>
+	  <li><span class="glyphicon glyphicon-asterisk"></span>Добавить header в sidebar:</li>
+	  <code> 
+		&lt;div id="header" class="sidebar_header"&gt;<br>
+		  &lt;img class="header_icon" src="img/drawer_icon.png"&gt;<br>
+		  &lt;span class="header_title">Sidebar CSS&lt;/span&gt;<br>
+		  &lt;span class="header_subtitle">by Hrust_r&lt;/span&gt;<br>
+		&lt;/div&gt;
+	  </code>
+	</ol>
+	<h3>Опции:</h3>
+	<ul>
+	  <li>&lt;li static&gt; - отключение анимации при наведении</li>
+	  <li></li>
+	</ul>
   </body>
 </html>		
